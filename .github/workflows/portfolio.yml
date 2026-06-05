@@ -4,8 +4,9 @@ on:
   workflow_dispatch:
   
   schedule:
-    - cron: "30 6 * * 1-5"
-    - cron: "30 11 * * 1-5"
+    - cron: "*/5 * * * *"
+    # - cron: "30 6 * * 1-5"
+    # - cron: "30 11 * * 1-5"
   
 jobs:
   run-report:
