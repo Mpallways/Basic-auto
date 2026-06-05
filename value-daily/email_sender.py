@@ -1,5 +1,6 @@
 import smtplib
 from datetime import datetime
+from zoneinfo import ZoneInfo
 from email.mime.text import (
     MIMEText
 )
@@ -27,7 +28,12 @@ def send_email(
 
     msg["From"] = sender
     msg["To"] = receiver
-    current_time = datetime.now().strftime("%d-%b-%Y %I:%M %p")
+    current_time = (
+        datetime.now(
+        ZoneInfo("Asia/Kolkata")
+        )
+        .strftime("%d-%b-%Y %I:%M %p IST")
+    )
     msg["Subject"] = (
         f"📊 Portfolio Report | {current_time}"
     )
