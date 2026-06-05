@@ -11,7 +11,11 @@ from email.mime.multipart import (
 import os
 
 
-def send_email(html):
+def send_email(
+        html,
+        value,
+        day_gain
+    ):
 
     sender = os.getenv("EMAIL_FROM")
 
@@ -24,7 +28,8 @@ def send_email(html):
     msg["From"] = sender
     msg["To"] = receiver
     msg["Subject"] = (
-        "Daily Portfolio Report"
+        f"📈 Portfolio ₹{value:,.0f} | "
+        f"Day Gain ₹{day_gain:,.0f}"
     )
 
     msg.attach(
