@@ -7,11 +7,11 @@ load_dotenv()
 
 def get_client():
 
-    api_key = os.getenv(
+    api_key = os.environ(
         "GROWW_API_KEY"
     )
 
-    api_secret = os.getenv(
+    api_secret = os.environ(
         "GROWW_API_SECRET"
     )
 
