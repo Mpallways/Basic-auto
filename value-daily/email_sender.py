@@ -13,17 +13,11 @@ import os
 
 def send_email(html):
 
-    sender = os.environ(
-        "EMAIL_FROM"
-    )
+    sender = os.getenv("EMAIL_FROM")
 
-    receiver = os.environ(
-        "EMAIL_TO"
-    )
+    receiver = os.getenv("EMAIL_TO")
 
-    password = os.environ(
-        "EMAIL_PASSWORD"
-    )
+    password = os.getenv("EMAIL_PASSWORD")
 
     msg = MIMEMultipart()
 
