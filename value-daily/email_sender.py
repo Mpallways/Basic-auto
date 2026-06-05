@@ -35,17 +35,17 @@ def send_email(
         .strftime("%d-%b-%Y %I:%M %p IST")
     )
     hour = datetime.now(
-    ZoneInfo("Asia/Kolkata")
-        ).hour
+        ZoneInfo("Asia/Kolkata")
+    ).hour
+    
+    if hour < 15:
+        run_name = "🕛 Noon Report"
+    else:
+        run_name = "🔔 Market Close Report"
         
-        run_name = (
-            "Noon Report"
-            if hour < 15
-            else "Closing Report"
-        )
-    msg["Subject"] = (
-        f"{run_name} | "
-        f"📊 Portfolio Report | {current_time}"
+        msg["Subject"] = (
+            f"{run_name} | "
+            f"📊 Portfolio Report | {current_time}"
     )
 
     msg.attach(
