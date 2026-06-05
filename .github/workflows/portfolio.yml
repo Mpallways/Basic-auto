@@ -22,7 +22,7 @@ jobs:
 
       - name: Install Packages
         run: |
-          pip install -r requirements.txt
+          pip install -r value-daily/requirements.txt
 
       - name: Run Portfolio Script
         env:
@@ -32,4 +32,4 @@ jobs:
            EMAIL_TO: ${{ secrets.EMAIL_TO }}
            EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
         run: |
-          python main.py
+          python python value-daily/main.py
