@@ -39,13 +39,13 @@ def send_email(
     ).hour
     
     if hour < 15:
-        run_name = "🕛 Noon Report"
+        run_name = "🕛 Noon Portfolio Report"
     else:
         run_name = "🔔 Market Close Report"
         
     msg["Subject"] = (
         f"{run_name} | "
-        f"Portfolio Report | {current_time}"
+        f"{current_time}"
     )
 
     msg.attach(
