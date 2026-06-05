@@ -1,5 +1,5 @@
 import smtplib
-
+from datetime import datetime
 from email.mime.text import (
     MIMEText
 )
@@ -11,11 +11,7 @@ from email.mime.multipart import (
 import os
 
 
-def send_email(
-        html,
-        value,
-        day_gain
-    ):
+def send_email(html):
 
     sender = os.getenv("EMAIL_FROM")
 
@@ -27,9 +23,9 @@ def send_email(
 
     msg["From"] = sender
     msg["To"] = receiver
+    current_time = datetime.now().strftime("%d-%b-%Y %I:%M %p")
     msg["Subject"] = (
-        f"📈 Portfolio ₹{value:,.0f} | "
-        f"Day Gain ₹{day_gain:,.0f}"
+        f"📊 Portfolio Report | {current_time}"
     )
 
     msg.attach(
