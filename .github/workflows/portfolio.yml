@@ -22,14 +22,14 @@ jobs:
 
       - name: Install Packages
         run: |
-          pip install -r value-daily/requirements.txt
+          pip install -r requirements.txt
 
       - name: Run Portfolio Script
         env:
-           GROWW_API_KEY: ${{ secrets.GROWW_API_KEY }}
-           GROWW_API_SECRET: ${{ secrets.GROWW_API_SECRET }}
-           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
-           EMAIL_TO: ${{ secrets.EMAIL_TO }}
-           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          GROWW_API_KEY: ${{ secrets.GROWW_API_KEY }}
+          GROWW_API_SECRET: ${{ secrets.GROWW_API_SECRET }}
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
         run: |
-          python python value-daily/main.py
+          python main.py
