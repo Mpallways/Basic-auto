@@ -65,7 +65,11 @@ html = build_email_html(
     top_loser
 )
 
-send_email(html)
+send_email(
+    html,
+    value,
+    day_gain
+)
 
 print(
     "Portfolio Report Sent"
