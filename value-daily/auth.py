@@ -1,8 +1,10 @@
 from growwapi import GrowwAPI
 import os
-from dotenv import load_dotenv
-
-load_dotenv()
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except:
+    pass
 
 
 def get_client():
