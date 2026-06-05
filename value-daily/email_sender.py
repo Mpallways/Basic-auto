@@ -13,15 +13,15 @@ import os
 
 def send_email(html):
 
-    sender = os.getenv(
+    sender = os.environ(
         "EMAIL_FROM"
     )
 
-    receiver = os.getenv(
+    receiver = os.environ(
         "EMAIL_TO"
     )
 
-    password = os.getenv(
+    password = os.environ(
         "EMAIL_PASSWORD"
     )
 
