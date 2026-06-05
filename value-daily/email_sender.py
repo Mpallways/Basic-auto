@@ -43,9 +43,9 @@ def send_email(
     else:
         run_name = "🔔 Market Close Report"
         
-        msg["Subject"] = (
-            f"{run_name} | "
-            f"📊 Portfolio Report | {current_time}"
+    msg["Subject"] = (
+        f"{run_name} | "
+        f"📊 Portfolio Report | {current_time}"
     )
 
     msg.attach(
