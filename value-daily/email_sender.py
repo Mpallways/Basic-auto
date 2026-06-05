@@ -11,7 +11,11 @@ from email.mime.multipart import (
 import os
 
 
-def send_email(html):
+def send_email(
+        html,
+        value,
+        day_gain
+    ):
 
     sender = os.getenv("EMAIL_FROM")
 
