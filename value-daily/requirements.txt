@@ -2,3 +2,4 @@ pandas
 yfinance
 growwapi
 requests
+python-dotenv
