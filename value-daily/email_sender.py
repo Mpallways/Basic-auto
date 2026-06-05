@@ -45,7 +45,7 @@ def send_email(
         
     msg["Subject"] = (
         f"{run_name} | "
-        f"📊 Portfolio Report | {current_time}"
+        f"Portfolio Report | {current_time}"
     )
 
     msg.attach(
