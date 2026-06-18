@@ -1,18 +1,14 @@
 import os
 
-from auth import get_client
 from portfolio import fetch_holdings
 from portfolio_metrics import calculate_metrics
 from report_html import build_email_html
 import pandas as pd
 
-client = get_client()
-df = fetch_holdings(client)
+df = fetch_holdings()
 
-results, value, day_gain, total_gain = calculate_metrics(
-    df,
-    client
-)
+results, value, day_gain, total_gain = calculate_metrics(df)
+
 report_df = pd.DataFrame(results)
 
 report_df = report_df.sort_values(
