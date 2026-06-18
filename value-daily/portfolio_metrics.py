@@ -1,7 +1,7 @@
 import pandas as pd
 import yfinance as yf
 
-def calculate_metrics(df, client):
+def calculate_metrics(df):
 
     results = []
 
@@ -11,14 +11,27 @@ def calculate_metrics(df, client):
 
     for _, row in df.iterrows():
 
-        symbol = row["trading_symbol"]
+        symbol = str(
+            row["Stock"]
+        ).strip()
 
-        qty = row["quantity"]
+        qty = float(
+            str(row["Qty"])
+            .replace(",", "")
+        )
 
-        avg_price = row["average_price"]
+        avg_price = float(
+            str(row["Avg Price"])
+            .replace("₹", "")
+            .replace(",", "")
+        )
 
         try:
-
+            # symbol = (
+            #     symbol
+            #     .replace("&", "")
+            #     .replace(" ", "")
+            # )
             ticker = yf.Ticker(f"{symbol}.NS")
 
             hist = ticker.history(period="2d")
