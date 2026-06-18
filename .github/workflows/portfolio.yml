@@ -31,8 +31,7 @@ jobs:
 
       - name: Run Portfolio Script
         env:
-          GROWW_API_KEY: ${{ secrets.GROWW_API_KEY }}
-          GROWW_API_SECRET: ${{ secrets.GROWW_API_SECRET }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
