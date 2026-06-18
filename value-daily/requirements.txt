@@ -1,5 +1,6 @@
 pandas
 yfinance
-growwapi
+gspread
+google-auth
 requests
 python-dotenv
