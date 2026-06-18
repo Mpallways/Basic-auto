@@ -1,6 +1,7 @@
 import smtplib
 from datetime import datetime
 from zoneinfo import ZoneInfo
+from dotenv import load_dotenv
 from email.mime.text import (
     MIMEText
 )
@@ -11,7 +12,7 @@ from email.mime.multipart import (
 
 import os
 
-
+load_dotenv()
 def send_email(
         html,
         value,
